@@ -71,10 +71,6 @@ export default function Home() {
             >
               🐦 @berzanorg
             </a>
-            <div className="flex items-center space-x-2 bg-white/10 backdrop-blur-sm rounded-lg px-3 py-2" data-testid="network-status">
-              <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
-              <span className="text-white text-sm font-medium">Monad Testnet</span>
-            </div>
           </div>
         </nav>
       </header>
@@ -132,26 +128,6 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Contract Info */}
-        <div className="mt-12 text-center max-w-2xl">
-          <div className="bg-black/20 backdrop-blur-sm rounded-xl p-6 border border-white/10" data-testid="contract-info">
-            <h4 className="text-white font-semibold mb-3">Contract Information</h4>
-            <div className="space-y-2 text-sm">
-              <div className="flex justify-between items-center">
-                <span className="text-purple-200">Contract Address:</span>
-                <span className="text-white font-mono text-xs" data-testid="contract-address">0x0337...4b0B</span>
-              </div>
-              <div className="flex justify-between items-center">
-                <span className="text-purple-200">Token Standard:</span>
-                <span className="text-white">ERC-1155</span>
-              </div>
-              <div className="flex justify-between items-center">
-                <span className="text-purple-200">Network:</span>
-                <span className="text-white">Monad Testnet</span>
-              </div>
-            </div>
-          </div>
-        </div>
       </main>
 
       {/* Footer */}

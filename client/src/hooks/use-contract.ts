@@ -1,7 +1,7 @@
 import { useState, useEffect, useCallback } from 'react';
 import { ethers } from 'ethers';
 import { useToast } from '@/hooks/use-toast';
-import { getContract, getContractWithSigner, TOKEN_ID } from '@/lib/web3';
+import { getContract, getContractWithSigner, TOKEN_ID, getTransactionUrl } from '@/lib/web3';
 
 export interface ContractState {
   userBalance: number;
@@ -64,8 +64,9 @@ export function useContract(provider: ethers.BrowserProvider | null, address: st
         throw new Error('You have already minted your Poppie NFT (1 per wallet limit)');
       }
 
+      // Try the simpler claim function first
       const tx = await contract.claim(
-        address, // _to
+        address, // _receiver
         TOKEN_ID, // _tokenId
         1, // _quantity
         '0x0000000000000000000000000000000000000000', // _currency (native token)
@@ -76,7 +77,19 @@ export function useContract(provider: ethers.BrowserProvider | null, address: st
 
       toast({
         title: 'Transaction Submitted',
-        description: 'Your minting transaction has been submitted. Please wait for confirmation.',
+        description: (
+          <div>
+            <p>Your minting transaction has been submitted.</p>
+            <a 
+              href={getTransactionUrl(tx.hash)} 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-blue-400 hover:text-blue-300 underline"
+            >
+              View on Monad Explorer →
+            </a>
+          </div>
+        ),
       });
 
       const receipt = await tx.wait();
@@ -84,7 +97,19 @@ export function useContract(provider: ethers.BrowserProvider | null, address: st
       if (receipt.status === 1) {
         toast({
           title: 'Mint Successful! 🎉',
-          description: 'Your Poppie NFT has been minted successfully!',
+          description: (
+            <div>
+              <p>Your Poppie NFT has been minted successfully!</p>
+              <a 
+                href={getTransactionUrl(receipt.hash)} 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-blue-400 hover:text-blue-300 underline"
+              >
+                View Transaction →
+              </a>
+            </div>
+          ),
         });
 
         // Refresh user balance
@@ -105,6 +130,8 @@ export function useContract(provider: ethers.BrowserProvider | null, address: st
         errorMessage = 'Insufficient MON tokens for gas fees';
       } else if (error.message.includes('phase not active')) {
         errorMessage = 'Minting phase is not currently active';
+      } else if (error.message.includes('execution reverted')) {
+        errorMessage = 'Contract execution failed. The minting phase may not be active or you may have already minted.';
       }
 
       setState(prev => ({ ...prev, error: errorMessage }));

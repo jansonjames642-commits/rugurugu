@@ -92,26 +92,6 @@ export function MintingInterface({
             </div>
           </div>
 
-          <div className="bg-indigo-900/30 rounded-xl p-4 border border-indigo-700/30" data-testid="network-info">
-            <div className="flex items-center space-x-3">
-              <div className="w-3 h-3 bg-green-400 rounded-full animate-pulse"></div>
-              <div>
-                <p className="text-white font-medium text-sm">Monad Testnet</p>
-                <p className="text-purple-200 text-xs">Chain ID: 10143</p>
-              </div>
-              <div className="ml-auto">
-                <a 
-                  href="https://testnet.monadexplorer.com" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="text-purple-300 hover:text-white transition-colors"
-                  data-testid="link-explorer"
-                >
-                  →
-                </a>
-              </div>
-            </div>
-          </div>
         </>
       )}
     </div>
