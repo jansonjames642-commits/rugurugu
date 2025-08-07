@@ -1,0 +1,36 @@
+inpage.js:1 MetaMask - RPC Error: Internal JSON-RPC error. 
+Object
+
+use-contract.ts:108 Error minting NFT: Error: execution reverted (no data present; likely require(false) occurred (action="estimateGas", data="0x", reason="require(false)", transaction={ "data": "0x2a79b0b4000000000000000000000000d8f70234941bee8b3378d76fae50cf1daea86d3b000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000c00000000000000000000000000000000000000000000000000000000000000000", "from": "0xd8f70234941bEE8b3378d76FAE50cF1DAEA86d3b", "to": "0x0337a3f0a53d83a78F5137b421a57583DECA4b0B" }, invocation=null, revert=null, code=CALL_EXCEPTION, version=6.15.0)
+    at makeError (ethers.js?v=91c3696c:337:15)
+    at getBuiltinCallException (ethers.js?v=91c3696c:12020:10)
+    at _AbiCoder.getBuiltinCallException (ethers.js?v=91c3696c:12091:12)
+    at _BrowserProvider.getRpcError (ethers.js?v=91c3696c:19294:26)
+    at _BrowserProvider.getRpcError (ethers.js?v=91c3696c:21728:18)
+    at ethers.js?v=91c3696c:19482:27
+inpage.js:1 MetaMask - RPC Error: Internal JSON-RPC error. 
+Object
+code
+: 
+-32603
+data
+: 
+{code: -32603, message: 'execution reverted', data: '0x', cause: null}
+message
+: 
+"Internal JSON-RPC error."
+stack
+: 
+"{\n  \"code\": -32603,\n  \"message\": \"Internal JSON-RPC error.\",\n  \"data\": {\n    \"code\": -32603,\n    \"message\": \"execution reverted\",\n    \"data\": \"0x\",\n    \"cause\": null\n  },\n  \"stack\": \"Error: Internal JSON-RPC error.\\n    at new o (chrome-extension://nkbihfbeogaeaoehlefnkodbefgpgknn/common-3.js:3:5787)\\n    at i (chrome-extension://nkbihfbeogaeaoehlefnkodbefgpgknn/common-3.js:3:8878)\\n    at Object.internal (chrome-extension://nkbihfbeogaeaoehlefnkodbefgpgknn/common-3.js:3:9487)\\n    at chrome-extension://nkbihfbeogaeaoehlefnkodbefgpgknn/common-1.js:3:22470\\n    at async chrome-extension://nkbihfbeogaeaoehlefnkodbefgpgknn/common-2.js:1:80753\"\n}\n  at new o (chrome-extension://nkbihfbeogaeaoehlefnkodbefgpgknn/common-3.js:3:5787)\n  at i (chrome-extension://nkbihfbeogaeaoehlefnkodbefgpgknn/common-3.js:3:8878)\n  at Object.internal (chrome-extension://nkbihfbeogaeaoehlefnkodbefgpgknn/common-3.js:3:9487)\n  at chrome-extension://nkbihfbeogaeaoehlefnkodbefgpgknn/common-1.js:3:22470\n  at async chrome-extension://nkbihfbeogaeaoehlefnkodbefgpgknn/common-2.js:1:80753"
+[[Prototype]]
+: 
+Object
+(anonymous)	@	inpage.js:1
+use-contract.ts:108 Error minting NFT: Error: execution reverted (no data present; likely require(false) occurred (action="estimateGas", data="0x", reason="require(false)", transaction={ "data": "0x2a79b0b4000000000000000000000000d8f70234941bee8b3378d76fae50cf1daea86d3b000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000c00000000000000000000000000000000000000000000000000000000000000000", "from": "0xd8f70234941bEE8b3378d76FAE50cF1DAEA86d3b", "to": "0x0337a3f0a53d83a78F5137b421a57583DECA4b0B" }, invocation=null, revert=null, code=CALL_EXCEPTION, version=6.15.0)
+    at makeError (ethers.js?v=91c3696c:337:15)
+    at getBuiltinCallException (ethers.js?v=91c3696c:12020:10)
+    at _AbiCoder.getBuiltinCallException (ethers.js?v=91c3696c:12091:12)
+    at _BrowserProvider.getRpcError (ethers.js?v=91c3696c:19294:26)
+    at _BrowserProvider.getRpcError (ethers.js?v=91c3696c:21728:18)
+    at ethers.js?v=91c3696c:19482:27
+(anonymous)	@	use-contract.ts:108
